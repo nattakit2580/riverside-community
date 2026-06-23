@@ -41,9 +41,13 @@ const I18N = {
     "exp.privacy.title": "ความเป็นส่วนตัว",
     "exp.privacy.text": "พื้นที่ส่วนตัวของแต่ละหลัง ไม่รบกวนกัน",
 
+    "aerial.label": "ภาพมุมสูง",
+    "aerial.title": "มองจากมุมสูง",
+    "aerial.text": "ผังชุมชนบ้านพักทั้งเจ็ดหลัง วางตัวไปตามแนวริมแม่น้ำแควน้อย ท่ามกลางสวนเขียวและต้นไม้ใหญ่",
+
     "houses.label": "ที่พัก",
     "houses.title": "บ้านพักของเรา",
-    "houses.subtitle": "บ้านไม้ไม่กี่หลัง แต่ละหลังมีเสน่ห์เฉพาะตัว",
+    "houses.subtitle": "บ้านไม้เจ็ดหลัง แต่ละหลังมีเสน่ห์เฉพาะตัว เลือกชมได้ทั้งตัวบ้าน ห้องนอน ห้องน้ำ และสวน",
     "houses.h1.name": "บ้านริมน้ำ",
     "houses.h1.desc": "บ้านไม้ติดแม่น้ำที่สุด เห็นวิวเต็มตาจากระเบียง",
     "houses.h2.name": "บ้านสวน",
@@ -52,10 +56,23 @@ const I18N = {
     "houses.h3.desc": "พื้นที่กว้างขวาง เหมาะกับการพักยาวเป็นกลุ่ม",
     "houses.h4.name": "บ้านสตูดิโอ",
     "houses.h4.desc": "ขนาดกะทัดรัด มุมทำงานพร้อม เหมาะกับคนทำงานทางไกล",
+    "houses.h5.name": "บ้านระเบียงไม้",
+    "houses.h5.desc": "ระเบียงไม้ยื่นออกไปเหนือสวน นั่งจิบกาแฟรับลมเย็นยามเช้า",
+    "houses.h6.name": "บ้านใต้ร่มไม้",
+    "houses.h6.desc": "ซ่อนตัวอยู่ใต้ร่มไม้ใหญ่ ร่มรื่นและเป็นส่วนตัวตลอดวัน",
+    "houses.h7.name": "บ้านปลายน้ำ",
+    "houses.h7.desc": "หลังสุดท้ายปลายชุมชน เงียบสงบและเป็นส่วนตัวที่สุด",
     "houses.feature.wifi": "Wi-Fi",
     "houses.feature.workspace": "มุมทำงาน",
     "houses.feature.kitchen": "ครัว",
     "houses.feature.river": "วิวแม่น้ำ",
+    "houses.feature.deck": "ระเบียงไม้",
+    "houses.feature.garden": "สวนส่วนตัว",
+    "houses.feature.private": "เป็นส่วนตัว",
+    "houses.view.exterior": "ตัวบ้าน",
+    "houses.view.bedroom": "ห้องนอน",
+    "houses.view.bathroom": "ห้องน้ำ",
+    "houses.view.garden": "สวน",
     "houses.cta": "สอบถามหลังนี้",
 
     "for.label": "เหมาะกับใคร",
@@ -142,9 +159,13 @@ const I18N = {
     "exp.privacy.title": "Privacy",
     "exp.privacy.text": "Each house has its own private space",
 
+    "aerial.label": "From above",
+    "aerial.title": "Seen from above",
+    "aerial.text": "All seven houses laid out along the bank of the Khwae Noi River, among green gardens and tall trees.",
+
     "houses.label": "Stay",
     "houses.title": "Our Houses",
-    "houses.subtitle": "A few wooden houses, each with its own character",
+    "houses.subtitle": "Seven wooden houses, each with its own character — view the house, bedroom, bathroom and garden.",
     "houses.h1.name": "Riverside House",
     "houses.h1.desc": "Closest to the water, with full river views from the deck",
     "houses.h2.name": "Garden House",
@@ -153,10 +174,23 @@ const I18N = {
     "houses.h3.desc": "Spacious and ideal for longer group stays",
     "houses.h4.name": "Studio House",
     "houses.h4.desc": "Compact with a ready workspace, perfect for remote workers",
+    "houses.h5.name": "Deck House",
+    "houses.h5.desc": "A wooden deck reaching over the garden — morning coffee in the cool breeze",
+    "houses.h6.name": "Canopy House",
+    "houses.h6.desc": "Tucked beneath tall trees, shaded and private all day long",
+    "houses.h7.name": "Cove House",
+    "houses.h7.desc": "The last house at the end of the community — the quietest and most private",
     "houses.feature.wifi": "Wi-Fi",
     "houses.feature.workspace": "Workspace",
     "houses.feature.kitchen": "Kitchen",
     "houses.feature.river": "River view",
+    "houses.feature.deck": "Wooden deck",
+    "houses.feature.garden": "Private garden",
+    "houses.feature.private": "Private",
+    "houses.view.exterior": "Exterior",
+    "houses.view.bedroom": "Bedroom",
+    "houses.view.bathroom": "Bathroom",
+    "houses.view.garden": "Garden",
     "houses.cta": "Enquire about this house",
 
     "for.label": "Who it's for",
@@ -210,9 +244,11 @@ const I18N = {
 
 /* ---- ระบบสลับภาษา ---- */
 const I18N_DEFAULT = "th";
+let CURRENT_LANG = I18N_DEFAULT;
 
 function applyLanguage(lang) {
   const dict = I18N[lang] || I18N[I18N_DEFAULT];
+  CURRENT_LANG = (I18N[lang] ? lang : I18N_DEFAULT);
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
@@ -247,3 +283,9 @@ function initLanguage() {
 }
 
 document.addEventListener("DOMContentLoaded", initLanguage);
+
+/* เปิดให้สคริปต์อื่น (เช่น ตัวสลับรูปบ้าน) สั่งแปลภาษาซ้ำได้ */
+window.RIVERSIDE_I18N = {
+  apply: applyLanguage,
+  get lang() { return CURRENT_LANG; }
+};

@@ -54,7 +54,35 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 ::selection { background: var(--forest); color: var(--paper); }
 
-h1,h2,h3,h4 { font-family: var(--serif); font-weight: 500; line-height: 1.04; letter-spacing: -0.015em; color: var(--ink); }
+h1,h2,h3,h4 { font-family: var(--serif); font-weight: 500; line-height: 1.04; letter-spacing: -0.015em; color: var(--ink); text-wrap: balance; }
+
+/* -------------------------------------------------------
+   Typography fix — ภาษาไทยต้องการพื้นที่แนวตั้งมากกว่า
+   และ "ห้าม" ใช้ letter-spacing ติดลบ ไม่งั้นสระ/วรรณยุกต์
+   จะชนกันและดู "ตก/แปลก" — จึงแยกกฎไทยออกจากอังกฤษ
+   ------------------------------------------------------- */
+[data-lang="th"] h1,
+[data-lang="th"] h2,
+[data-lang="th"] h3,
+[data-lang="th"] h4 {
+  letter-spacing: 0;
+  line-height: 1.22;
+  font-weight: 600;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+[data-lang="th"] .hero h1 { line-height: 1.12; letter-spacing: 0; }
+[data-lang="th"] .footer__big { line-height: 1.0; letter-spacing: -0.01em; }
+[data-lang="th"] .statement__body p.lead-big { letter-spacing: 0; line-height: 1.42; }
+[data-lang="th"] body,
+[data-lang="th"] .house__desc,
+[data-lang="th"] .exp-row__text,
+[data-lang="th"] .aud-row p { line-height: 1.7; }
+/* วรรณยุกต์/สระบนของไทยจะไม่ถูกตัดบนสุด */
+[data-lang="th"] h1,
+[data-lang="th"] h2,
+[data-lang="th"] .hero h1,
+[data-lang="th"] .footer__big { padding-top: 0.06em; }
 
 /* ---------- Layout ---------- */
 .wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--pad); }
@@ -188,7 +216,8 @@ h1,h2,h3,h4 { font-family: var(--serif); font-weight: 500; line-height: 1.04; le
 .houses-intro p { color: var(--ink-soft); max-width: 34ch; }
 .house { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 5vw, 4.5rem); align-items: center; padding-block: clamp(2.5rem, 6vw, 5rem); border-top: 1px solid var(--line); }
 .house:last-child { border-bottom: 1px solid var(--line); }
-.house--flip .house__media { order: 2; }
+.house--flip .house__media,
+.house--flip .house__gallery { order: 2; }
 .house__media { position: relative; overflow: hidden; aspect-ratio: 5/4; }
 .house__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s var(--ease); }
 .house:hover .house__media img { transform: scale(1.05); }
@@ -200,6 +229,32 @@ h1,h2,h3,h4 { font-family: var(--serif); font-weight: 500; line-height: 1.04; le
 .house__feat span { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); padding: 0.7rem 1.2rem 0.7rem 0; border-bottom: 1px solid var(--line); }
 .house__link { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; border-bottom: 1px solid var(--ink); padding-bottom: 3px; transition: gap .4s var(--ease); }
 .house__link:hover { gap: 1rem; }
+
+/* gallery (main image + view thumbnails) */
+.house__gallery { display: flex; flex-direction: column; gap: 0.7rem; }
+.house__main { position: relative; overflow: hidden; aspect-ratio: 5/4; background: var(--paper-2); }
+.house__img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s var(--ease); }
+.house:hover .house__img { transform: scale(1.04); }
+.house__main .tag { position: absolute; top: 1rem; left: 1rem; z-index: 2; background: var(--paper); color: var(--ink); font-family: var(--serif); font-style: italic; font-size: 0.8rem; letter-spacing: 0.04em; padding: 0.35rem 0.75rem; }
+.house__view { position: absolute; left: 0; bottom: 0; z-index: 2; background: rgba(24,36,28,0.82); color: var(--paper); font-size: 0.64rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.5rem 0.95rem; }
+.house__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
+.house__thumb { padding: 0; margin: 0; border: 0; background: var(--paper-2); cursor: pointer; overflow: hidden; aspect-ratio: 1; position: relative; outline-offset: 2px; }
+.house__thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: opacity .4s var(--ease), transform .6s var(--ease); }
+.house__thumb:hover img { opacity: 0.92; transform: scale(1.06); }
+.house__thumb.is-active img { opacity: 1; }
+.house__thumb.is-active { outline: 1.5px solid var(--forest); }
+.house__info { align-self: center; }
+
+/* ---------- Aerial / drone band ---------- */
+.aerial { position: relative; height: clamp(58vh, 78vh, 90vh); overflow: hidden; background: var(--forest-deep); }
+.aerial img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.aerial::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(24,36,28,0.15) 0%, rgba(24,36,28,0.1) 40%, rgba(24,36,28,0.78) 100%); }
+.aerial__cap { position: absolute; left: 0; right: 0; bottom: clamp(2.2rem, 6vw, 5rem); z-index: 2; color: var(--paper); }
+.aerial__cap .kicker { color: var(--sage); }
+.aerial__cap .kicker::before { background: var(--sage); }
+.aerial__cap .index-num { color: var(--sage); font-style: normal; }
+.aerial__cap h2 { color: var(--paper); font-size: clamp(2.2rem, 6vw, 4.4rem); font-weight: 400; margin-top: 1rem; max-width: 18ch; }
+.aerial__cap p { color: rgba(239,231,214,0.86); max-width: 46ch; margin-top: 1.1rem; }
 
 /* ---------- For whom (dark) ---------- */
 .audience { background: var(--forest); color: var(--paper); }
@@ -291,7 +346,8 @@ h1,h2,h3,h4 { font-family: var(--serif); font-weight: 500; line-height: 1.04; le
   .statement, .loc-grid, .contact-grid { grid-template-columns: 1fr; }
   .statement__head { position: static; }
   .house { grid-template-columns: 1fr; gap: 1.5rem; }
-  .house--flip .house__media { order: 0; }
+  .house--flip .house__media,
+  .house--flip .house__gallery { order: 0; }
   .exp-row { grid-template-columns: 3rem 1fr; }
   .exp-row__text { grid-column: 2; }
   .aud-row { grid-template-columns: 3rem 1fr; }

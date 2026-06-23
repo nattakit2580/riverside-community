@@ -97,6 +97,17 @@
     </div>
   </section>
 
+  <!-- ===== Aerial / Drone ===== -->
+  <section class="aerial reveal" aria-label="Aerial view">
+    <img src="assets/img/aerial.jpg" alt="วิวมุมสูงชุมชนบ้านพักริมแม่น้ำ"
+         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=2000&q=80'">
+    <div class="aerial__cap wrap">
+      <span class="kicker"><span class="index-num">↟</span> <span data-i18n="aerial.label">ภาพมุมสูง</span></span>
+      <h2 data-i18n="aerial.title">มองจากมุมสูง</h2>
+      <p data-i18n="aerial.text">ผังชุมชนบ้านพักทั้งเจ็ดหลัง วางตัวไปตามแนวริมแม่น้ำแควน้อย ท่ามกลางสวนเขียวและต้นไม้ใหญ่</p>
+    </div>
+  </section>
+
   <!-- ===== Experience ===== -->
   <section class="section" id="experience">
     <div class="wrap">
@@ -121,12 +132,26 @@
           <span class="kicker"><span class="index-num">03</span> <span data-i18n="houses.label">ที่พัก</span></span>
           <h2 data-i18n="houses.title">บ้านพักของเรา</h2>
         </div>
-        <p data-i18n="houses.subtitle">บ้านไม้ไม่กี่หลัง แต่ละหลังมีเสน่ห์เฉพาะตัว</p>
+        <p data-i18n="houses.subtitle">บ้านไม้เจ็ดหลัง แต่ละหลังมีเสน่ห์เฉพาะตัว เลือกชมได้ทั้งตัวบ้าน ห้องนอน ห้องน้ำ และสวน</p>
       </div>
 
+      <!-- House 01 -->
       <article class="house reveal">
-        <div class="house__media"><span class="tag">01</span><img src="assets/img/house-1.jpg" alt="บ้านริมน้ำ" onerror="this.src='https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80'"></div>
-        <div>
+        <div class="house__gallery">
+          <div class="house__main">
+            <span class="tag">N°01</span>
+            <span class="house__view" data-i18n="houses.view.exterior">ตัวบ้าน</span>
+            <img class="house__img" src="assets/img/house-1-exterior.jpg" alt="บ้านริมน้ำ"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80'">
+          </div>
+          <div class="house__thumbs">
+            <button class="house__thumb is-active" data-view-key="houses.view.exterior" data-full="assets/img/house-1-exterior.jpg" data-fallback="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-1-exterior.jpg" alt="ตัวบ้าน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bedroom" data-full="assets/img/house-1-bedroom.jpg" data-fallback="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-1-bedroom.jpg" alt="ห้องนอน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bathroom" data-full="assets/img/house-1-bathroom.jpg" data-fallback="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-1-bathroom.jpg" alt="ห้องน้ำ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.garden" data-full="assets/img/house-1-garden.jpg" data-fallback="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-1-garden.jpg" alt="สวน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=500&q=70'"></button>
+          </div>
+        </div>
+        <div class="house__info">
           <span class="house__idx">House N°01</span>
           <h3 class="house__name" data-i18n="houses.h1.name">บ้านริมน้ำ</h3>
           <p class="house__desc" data-i18n="houses.h1.desc">บ้านไม้ติดแม่น้ำที่สุด เห็นวิวเต็มตาจากระเบียง</p>
@@ -135,9 +160,23 @@
         </div>
       </article>
 
+      <!-- House 02 -->
       <article class="house house--flip reveal">
-        <div class="house__media"><span class="tag">02</span><img src="assets/img/house-2.jpg" alt="บ้านสวน" onerror="this.src='https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=80'"></div>
-        <div>
+        <div class="house__gallery">
+          <div class="house__main">
+            <span class="tag">N°02</span>
+            <span class="house__view" data-i18n="houses.view.exterior">ตัวบ้าน</span>
+            <img class="house__img" src="assets/img/house-2-exterior.jpg" alt="บ้านสวน"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=80'">
+          </div>
+          <div class="house__thumbs">
+            <button class="house__thumb is-active" data-view-key="houses.view.exterior" data-full="assets/img/house-2-exterior.jpg" data-fallback="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-2-exterior.jpg" alt="ตัวบ้าน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bedroom" data-full="assets/img/house-2-bedroom.jpg" data-fallback="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-2-bedroom.jpg" alt="ห้องนอน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bathroom" data-full="assets/img/house-2-bathroom.jpg" data-fallback="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-2-bathroom.jpg" alt="ห้องน้ำ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.garden" data-full="assets/img/house-2-garden.jpg" data-fallback="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-2-garden.jpg" alt="สวน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=70'"></button>
+          </div>
+        </div>
+        <div class="house__info">
           <span class="house__idx">House N°02</span>
           <h3 class="house__name" data-i18n="houses.h2.name">บ้านสวน</h3>
           <p class="house__desc" data-i18n="houses.h2.desc">ล้อมรอบด้วยสวนและสนามหญ้า เงียบสงบเป็นพิเศษ</p>
@@ -146,9 +185,23 @@
         </div>
       </article>
 
+      <!-- House 03 -->
       <article class="house reveal">
-        <div class="house__media"><span class="tag">03</span><img src="assets/img/house-3.jpg" alt="บ้านครอบครัว" onerror="this.src='https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80'"></div>
-        <div>
+        <div class="house__gallery">
+          <div class="house__main">
+            <span class="tag">N°03</span>
+            <span class="house__view" data-i18n="houses.view.exterior">ตัวบ้าน</span>
+            <img class="house__img" src="assets/img/house-3-exterior.jpg" alt="บ้านครอบครัว"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80'">
+          </div>
+          <div class="house__thumbs">
+            <button class="house__thumb is-active" data-view-key="houses.view.exterior" data-full="assets/img/house-3-exterior.jpg" data-fallback="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-3-exterior.jpg" alt="ตัวบ้าน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bedroom" data-full="assets/img/house-3-bedroom.jpg" data-fallback="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-3-bedroom.jpg" alt="ห้องนอน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bathroom" data-full="assets/img/house-3-bathroom.jpg" data-fallback="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-3-bathroom.jpg" alt="ห้องน้ำ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.garden" data-full="assets/img/house-3-garden.jpg" data-fallback="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-3-garden.jpg" alt="สวน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=500&q=70'"></button>
+          </div>
+        </div>
+        <div class="house__info">
           <span class="house__idx">House N°03</span>
           <h3 class="house__name" data-i18n="houses.h3.name">บ้านครอบครัว</h3>
           <p class="house__desc" data-i18n="houses.h3.desc">พื้นที่กว้างขวาง เหมาะกับการพักยาวเป็นกลุ่ม</p>
@@ -157,13 +210,102 @@
         </div>
       </article>
 
+      <!-- House 04 -->
       <article class="house house--flip reveal">
-        <div class="house__media"><span class="tag">04</span><img src="assets/img/house-4.jpg" alt="บ้านสตูดิโอ" onerror="this.src='https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80'"></div>
-        <div>
+        <div class="house__gallery">
+          <div class="house__main">
+            <span class="tag">N°04</span>
+            <span class="house__view" data-i18n="houses.view.exterior">ตัวบ้าน</span>
+            <img class="house__img" src="assets/img/house-4-exterior.jpg" alt="บ้านสตูดิโอ"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80'">
+          </div>
+          <div class="house__thumbs">
+            <button class="house__thumb is-active" data-view-key="houses.view.exterior" data-full="assets/img/house-4-exterior.jpg" data-fallback="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-4-exterior.jpg" alt="ตัวบ้าน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bedroom" data-full="assets/img/house-4-bedroom.jpg" data-fallback="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-4-bedroom.jpg" alt="ห้องนอน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bathroom" data-full="assets/img/house-4-bathroom.jpg" data-fallback="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-4-bathroom.jpg" alt="ห้องน้ำ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.garden" data-full="assets/img/house-4-garden.jpg" data-fallback="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-4-garden.jpg" alt="สวน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=500&q=70'"></button>
+          </div>
+        </div>
+        <div class="house__info">
           <span class="house__idx">House N°04</span>
           <h3 class="house__name" data-i18n="houses.h4.name">บ้านสตูดิโอ</h3>
           <p class="house__desc" data-i18n="houses.h4.desc">ขนาดกะทัดรัด มุมทำงานพร้อม เหมาะกับคนทำงานทางไกล</p>
           <div class="house__feat"><span data-i18n="houses.feature.workspace">มุมทำงาน</span><span data-i18n="houses.feature.wifi">Wi-Fi</span></div>
+          <a href="#contact" class="house__link" data-i18n="houses.cta">สอบถามหลังนี้</a>
+        </div>
+      </article>
+
+      <!-- House 05 -->
+      <article class="house reveal">
+        <div class="house__gallery">
+          <div class="house__main">
+            <span class="tag">N°05</span>
+            <span class="house__view" data-i18n="houses.view.exterior">ตัวบ้าน</span>
+            <img class="house__img" src="assets/img/house-5-exterior.jpg" alt="บ้านระเบียงไม้"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=80'">
+          </div>
+          <div class="house__thumbs">
+            <button class="house__thumb is-active" data-view-key="houses.view.exterior" data-full="assets/img/house-5-exterior.jpg" data-fallback="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-5-exterior.jpg" alt="ตัวบ้าน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bedroom" data-full="assets/img/house-5-bedroom.jpg" data-fallback="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-5-bedroom.jpg" alt="ห้องนอน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bathroom" data-full="assets/img/house-5-bathroom.jpg" data-fallback="https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-5-bathroom.jpg" alt="ห้องน้ำ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.garden" data-full="assets/img/house-5-garden.jpg" data-fallback="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-5-garden.jpg" alt="สวน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=500&q=70'"></button>
+          </div>
+        </div>
+        <div class="house__info">
+          <span class="house__idx">House N°05</span>
+          <h3 class="house__name" data-i18n="houses.h5.name">บ้านระเบียงไม้</h3>
+          <p class="house__desc" data-i18n="houses.h5.desc">ระเบียงไม้ยื่นออกไปเหนือสวน นั่งจิบกาแฟรับลมเย็นยามเช้า</p>
+          <div class="house__feat"><span data-i18n="houses.feature.deck">ระเบียงไม้</span><span data-i18n="houses.feature.river">วิวแม่น้ำ</span><span data-i18n="houses.feature.wifi">Wi-Fi</span></div>
+          <a href="#contact" class="house__link" data-i18n="houses.cta">สอบถามหลังนี้</a>
+        </div>
+      </article>
+
+      <!-- House 06 -->
+      <article class="house house--flip reveal">
+        <div class="house__gallery">
+          <div class="house__main">
+            <span class="tag">N°06</span>
+            <span class="house__view" data-i18n="houses.view.exterior">ตัวบ้าน</span>
+            <img class="house__img" src="assets/img/house-6-exterior.jpg" alt="บ้านใต้ร่มไม้"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=1200&q=80'">
+          </div>
+          <div class="house__thumbs">
+            <button class="house__thumb is-active" data-view-key="houses.view.exterior" data-full="assets/img/house-6-exterior.jpg" data-fallback="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-6-exterior.jpg" alt="ตัวบ้าน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bedroom" data-full="assets/img/house-6-bedroom.jpg" data-fallback="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-6-bedroom.jpg" alt="ห้องนอน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bathroom" data-full="assets/img/house-6-bathroom.jpg" data-fallback="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-6-bathroom.jpg" alt="ห้องน้ำ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.garden" data-full="assets/img/house-6-garden.jpg" data-fallback="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-6-garden.jpg" alt="สวน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=500&q=70'"></button>
+          </div>
+        </div>
+        <div class="house__info">
+          <span class="house__idx">House N°06</span>
+          <h3 class="house__name" data-i18n="houses.h6.name">บ้านใต้ร่มไม้</h3>
+          <p class="house__desc" data-i18n="houses.h6.desc">ซ่อนตัวอยู่ใต้ร่มไม้ใหญ่ ร่มรื่นและเป็นส่วนตัวตลอดวัน</p>
+          <div class="house__feat"><span data-i18n="houses.feature.garden">สวนส่วนตัว</span><span data-i18n="houses.feature.workspace">มุมทำงาน</span><span data-i18n="houses.feature.wifi">Wi-Fi</span></div>
+          <a href="#contact" class="house__link" data-i18n="houses.cta">สอบถามหลังนี้</a>
+        </div>
+      </article>
+
+      <!-- House 07 -->
+      <article class="house reveal">
+        <div class="house__gallery">
+          <div class="house__main">
+            <span class="tag">N°07</span>
+            <span class="house__view" data-i18n="houses.view.exterior">ตัวบ้าน</span>
+            <img class="house__img" src="assets/img/house-7-exterior.jpg" alt="บ้านปลายน้ำ"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80'">
+          </div>
+          <div class="house__thumbs">
+            <button class="house__thumb is-active" data-view-key="houses.view.exterior" data-full="assets/img/house-7-exterior.jpg" data-fallback="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-7-exterior.jpg" alt="ตัวบ้าน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bedroom" data-full="assets/img/house-7-bedroom.jpg" data-fallback="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-7-bedroom.jpg" alt="ห้องนอน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.bathroom" data-full="assets/img/house-7-bathroom.jpg" data-fallback="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-7-bathroom.jpg" alt="ห้องน้ำ" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=500&q=70'"></button>
+            <button class="house__thumb" data-view-key="houses.view.garden" data-full="assets/img/house-7-garden.jpg" data-fallback="https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1200&q=80"><img src="assets/img/house-7-garden.jpg" alt="สวน" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=500&q=70'"></button>
+          </div>
+        </div>
+        <div class="house__info">
+          <span class="house__idx">House N°07</span>
+          <h3 class="house__name" data-i18n="houses.h7.name">บ้านปลายน้ำ</h3>
+          <p class="house__desc" data-i18n="houses.h7.desc">หลังสุดท้ายปลายชุมชน เงียบสงบและเป็นส่วนตัวที่สุด</p>
+          <div class="house__feat"><span data-i18n="houses.feature.river">วิวแม่น้ำ</span><span data-i18n="houses.feature.private">เป็นส่วนตัว</span><span data-i18n="houses.feature.kitchen">ครัว</span></div>
           <a href="#contact" class="house__link" data-i18n="houses.cta">สอบถามหลังนี้</a>
         </div>
       </article>

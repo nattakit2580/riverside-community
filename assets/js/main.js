@@ -62,6 +62,35 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((s) => spy.observe(s));
   }
 
+  /* ---- House gallery: thumbnail switcher ---- */
+  document.querySelectorAll(".house__gallery").forEach((gallery) => {
+    const main = gallery.querySelector(".house__img");
+    const caption = gallery.querySelector(".house__view");
+    const thumbs = gallery.querySelectorAll(".house__thumb");
+    if (!main || !thumbs.length) return;
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        const full = thumb.getAttribute("data-full");
+        const fallback = thumb.getAttribute("data-fallback");
+        const viewKey = thumb.getAttribute("data-view-key");
+
+        // ถ้าไฟล์จริงไม่มี ให้ตกไปใช้รูป placeholder
+        main.onerror = function () { this.onerror = null; if (fallback) this.src = fallback; };
+        if (full) main.src = full;
+
+        // อัปเดตป้ายมุมภาพ แล้วแปลตามภาษาปัจจุบัน
+        if (caption && viewKey) {
+          caption.setAttribute("data-i18n", viewKey);
+          if (window.RIVERSIDE_I18N) window.RIVERSIDE_I18N.apply(window.RIVERSIDE_I18N.lang);
+        }
+
+        thumbs.forEach((t) => t.classList.remove("is-active"));
+        thumb.classList.add("is-active");
+      });
+    });
+  });
+
   /* ---- Contact form ---- */
   const form = document.getElementById("contactForm");
   const success = document.getElementById("formSuccess");
