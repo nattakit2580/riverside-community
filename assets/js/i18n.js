@@ -113,6 +113,7 @@ const I18N = {
     "contact.send": "ส่งข้อความ",
     "contact.or": "หรือติดต่อด่วน",
     "contact.line": "แชท LINE",
+    "contact.whatsapp": "แชท WhatsApp",
     "contact.call": "โทรเลย",
     "contact.success": "ส่งข้อความเรียบร้อย ขอบคุณครับ เราจะติดต่อกลับโดยเร็ว",
 
@@ -231,6 +232,7 @@ const I18N = {
     "contact.send": "Send message",
     "contact.or": "Or reach us directly",
     "contact.line": "Chat on LINE",
+    "contact.whatsapp": "Chat on WhatsApp",
     "contact.call": "Call now",
     "contact.success": "Message sent — thank you! We'll get back to you shortly.",
 
