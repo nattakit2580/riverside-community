@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Riverside">
+  <rect width="64" height="64" rx="14" fill="#2f5d50"/>
+  <path d="M10 38c6 0 6-5 12-5s6 5 12 5 6-5 12-5 6 5 8 5" fill="none" stroke="#cfe3d8" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M10 47c6 0 6-5 12-5s6 5 12 5 6-5 12-5 6 5 8 5" fill="none" stroke="#9ec5b4" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M40 14c-7 3-11 9-11 16 7 0 13-6 13-13 0-1 0-2-2-3z" fill="#e8c98a"/>
+</svg>
