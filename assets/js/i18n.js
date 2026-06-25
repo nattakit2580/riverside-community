@@ -247,8 +247,9 @@ const I18N_DEFAULT = "th";
 let CURRENT_LANG = I18N_DEFAULT;
 
 function applyLanguage(lang) {
-  const dict = I18N[lang] || I18N[I18N_DEFAULT];
-  CURRENT_LANG = (I18N[lang] ? lang : I18N_DEFAULT);
+  const nextLang = I18N[lang] ? lang : I18N_DEFAULT;
+  const dict = I18N[nextLang];
+  CURRENT_LANG = nextLang;
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
@@ -261,15 +262,17 @@ function applyLanguage(lang) {
     if (dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
   });
 
-  document.documentElement.lang = lang;
-  document.documentElement.setAttribute("data-lang", lang);
+  document.documentElement.lang = nextLang;
+  document.documentElement.setAttribute("data-lang", nextLang);
 
   // อัปเดตปุ่มสลับภาษา
   document.querySelectorAll("[data-lang-btn]").forEach((btn) => {
-    btn.classList.toggle("is-active", btn.getAttribute("data-lang-btn") === lang);
+    const active = btn.getAttribute("data-lang-btn") === nextLang;
+    btn.classList.toggle("is-active", active);
+    btn.setAttribute("aria-pressed", active ? "true" : "false");
   });
 
-  try { localStorage.setItem("riverside-lang", lang); } catch (e) {}
+  try { localStorage.setItem("riverside-lang", nextLang); } catch (e) {}
 }
 
 function initLanguage() {

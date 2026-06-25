@@ -18,17 +18,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ---- Sticky header ---- */
   const header = document.getElementById("header");
-  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 60);
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  if (header) {
+    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 60);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 
   /* ---- Mobile menu ---- */
   const nav = document.getElementById("nav");
   const toggle = document.getElementById("navToggle");
-  if (toggle) {
-    toggle.addEventListener("click", () => nav.classList.toggle("open"));
+  if (nav && toggle) {
+    const setMenuOpen = (open) => {
+      nav.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+
+    toggle.addEventListener("click", () => setMenuOpen(!nav.classList.contains("open")));
     nav.querySelectorAll(".nav__links a").forEach((a) =>
-      a.addEventListener("click", () => nav.classList.remove("open"))
+      a.addEventListener("click", () => setMenuOpen(false))
     );
   }
 
@@ -99,9 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const action = form.getAttribute("action") || "";
       const done = () => {
-        success.classList.add("show");
+        if (success) {
+          success.classList.add("show");
+          success.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
         form.reset();
-        success.scrollIntoView({ behavior: "smooth", block: "center" });
       };
       if (action.includes("your-id")) { done(); return; } // demo mode
       try {

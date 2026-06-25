@@ -35,17 +35,17 @@
         </ul>
         <div class="nav__right">
           <div class="lang" role="group" aria-label="Language">
-            <button data-lang-btn="th">TH</button><span>/</span><button data-lang-btn="en">EN</button>
+            <button type="button" data-lang-btn="th" aria-pressed="true">TH</button><span>/</span><button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
           </div>
           <a href="#contact" class="btn btn--solid nav__cta" data-i18n="nav.cta">สอบถามที่พัก</a>
-          <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span></button>
+          <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="nav" aria-expanded="false"><span></span><span></span></button>
         </div>
       </nav>
     </div>
   </header>
 
   <!-- ===== Side index ===== -->
-  <nav class="side-index" id="sideIndex" aria-hidden="true">
+  <nav class="side-index" id="sideIndex" aria-label="Section index">
     <a href="#about"><span class="lbl">01</span><span class="dot"></span></a>
     <a href="#experience"><span class="lbl">02</span><span class="dot"></span></a>
     <a href="#houses"><span class="lbl">03</span><span class="dot"></span></a>
@@ -65,7 +65,7 @@
         <p class="hero__coords">13.96°N&nbsp;&nbsp;99.05°E · <span data-i18n="hero.est">ก่อตั้ง 2026</span></p>
       </div>
       <div class="hero__cta">
-        <a href="#contact" class="btn btn--solid" data-i18n="hero.cta">สอบถามที่พัก <span class="ar">→</span></a>
+        <a href="#contact" class="btn btn--solid"><span data-i18n="hero.cta">สอบถามที่พัก</span> <span class="ar" aria-hidden="true">→</span></a>
         <a href="#houses" class="btn btn--light" data-i18n="hero.cta2">ดูบ้านพัก</a>
       </div>
     </div>
@@ -356,7 +356,7 @@
           <div><b>20′</b><span data-i18n="loc.distance2">ถึงสะพานข้ามแม่น้ำแคว</span></div>
           <div><b>2.5h</b><span data-i18n="loc.distance3">ถึงสนามบินสุวรรณภูมิ</span></div>
         </div>
-        <a href="https://maps.google.com/?q=Kanchanaburi" target="_blank" rel="noopener" class="btn btn--ink" data-i18n="loc.map">เปิดใน Google Maps <span class="ar">→</span></a>
+        <a href="https://maps.google.com/?q=Kanchanaburi" target="_blank" rel="noopener" class="btn btn--ink"><span data-i18n="loc.map">เปิดใน Google Maps</span> <span class="ar" aria-hidden="true">→</span></a>
       </div>
       <iframe class="loc-map reveal" title="Map" loading="lazy" allowfullscreen
         src="https://www.google.com/maps?q=Kanchanaburi&output=embed"></iframe>
@@ -381,7 +381,7 @@
             <div class="field"><label data-i18n="contact.dates">ช่วงเวลาที่สนใจ</label><input type="text" name="dates" data-i18n-ph="contact.datesPh" placeholder="เช่น ก.ค. – ส.ค. 2026"></div>
           </div>
           <div class="field"><label data-i18n="contact.message">ข้อความ</label><textarea name="message" data-i18n-ph="contact.messagePh" placeholder="บอกเราเกี่ยวกับการพักของคุณ..."></textarea></div>
-          <button type="submit" class="btn btn--light" data-i18n="contact.send">ส่งข้อความ <span class="ar">→</span></button>
+          <button type="submit" class="btn btn--light"><span data-i18n="contact.send">ส่งข้อความ</span> <span class="ar" aria-hidden="true">→</span></button>
         </form>
 
         <aside class="contact-aside reveal">
@@ -427,8 +427,8 @@
         <div>
           <h4 data-i18n="footer.follow">ติดตามเรา</h4>
           <ul>
-            <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+            <li><span>Instagram</span></li>
+            <li><span>Facebook</span></li>
           </ul>
         </div>
       </div>
