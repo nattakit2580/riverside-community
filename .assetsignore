@@ -1,0 +1,17 @@
+# Files NOT to publish to the website (Cloudflare Workers static assets).
+# Without this, deploying from the repo root would expose .git, configs, etc.
+.git
+.git/**
+.wrangler
+.wrangler/**
+.gitignore
+.assetsignore
+wrangler.jsonc
+package.json
+node_modules
+node_modules/**
+.claude
+.claude/**
+README.md
+PROPOSAL.md
+assets/img/README.md

@@ -1,0 +1,10 @@
+{
+  // Cloudflare Worker = static assets only (no server script).
+  // Serves the site from the repo root; .assetsignore keeps .git/configs out.
+  "name": "riverside-community",
+  "compatibility_date": "2025-06-01",
+  "workers_dev": true,
+  "assets": {
+    "directory": "."
+  }
+}
